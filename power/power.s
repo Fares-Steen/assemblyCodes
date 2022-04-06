@@ -1,3 +1,4 @@
+ # as power.s --32 -o power.o;ld -m elf_i386 power.o -o power;./power;echo $?
  # PURPOSE:  Program to illustrate how functions work
  #          This program will compute the value of
  # 2^3 + 5^2 #
@@ -24,7 +25,7 @@ addl  $8, %esp # move the stack pointer back
 popl %ebx # The second answer is already#in %eax.  We saved the first answer onto the stack,
 		  # so now we can just pop it out into %ebx
 
-addl  %eax, %ebx  # add them together the result is in %ebx
+addl  %eax, %ebx  # sum them together the result is in %ebx
 movl  $1, %eax  # exit (%ebx is returned)
 int   $0x80
 
